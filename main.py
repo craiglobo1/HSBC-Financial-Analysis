@@ -1,8 +1,20 @@
 from sys import argv
+from unicodedata import category
 import pandas
 import re
 from datetime import datetime
 import os
+
+
+categories = [
+    "Food",
+    "Grocery",
+    "Rent",
+    "Utilites",
+    "Phone",
+    "University fees",
+    "Others"
+]
 
 def normalize_sheet(sheet : pandas.DataFrame):
     deleted = []
@@ -72,7 +84,9 @@ def main():
                 return
 
     
-
+    #TODO: add categories manual with cache
+    #TODO: generate a financial pie chart of expenses by category (https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_and_donut_labels.html)
+    #TODO: line graph of spending over time
 
     total_cost = sheet["Amount"].sum()
 

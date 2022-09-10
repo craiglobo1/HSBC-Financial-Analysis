@@ -1,2 +1,4 @@
 TransactionHistory.csv
-files/
+files/*
+!files/.gitkeep
+.cache
